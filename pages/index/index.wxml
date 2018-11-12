@@ -3,60 +3,32 @@
   
 <van-tabs active="{{ active }}" bind:click="onClickDisabled">
     <van-tab title="JavaScript">
-       <view>
-          <van-card
-            num="2"
-            tag="8.0"
-            price="2.00"
-            desc="描述信息"
-            title="你不知道的JavaScript 上卷+中卷+下卷全套3本书"
-            thumb="https://img.alicdn.com/imgextra/i4/741719789/O1CN012MBPYs3N0v28FxR_!!0-item_pic.jpg_430x430q90.jpg"
-          >
-            <view slot="footer">
-              <van-button size="mini">按钮</van-button>
-              <van-button size="mini">按钮</van-button>
-            </view>
-          </van-card>
-          <van-card
-            num="2"
-            tag="8.0"
-            price="2.00"
-            desc="描述信息"
-            title="你不知道的JavaScript 上卷+中卷+下卷全套3本书"
-            thumb="https://img.alicdn.com/imgextra/i4/741719789/O1CN012MBPYs3N0v28FxR_!!0-item_pic.jpg_430x430q90.jpg"
-          >
-            <view slot="footer">
-              <van-button size="mini">按钮</van-button>
-              <van-button size="mini">按钮</van-button>
-            </view>
-          </van-card>
-          <van-card
-            num="2"
-            tag="8.0"
-            price="2.00"
-            desc="描述信息"
-            title="你不知道的JavaScript 上卷+中卷+下卷全套3本书"
-            thumb="https://img.alicdn.com/imgextra/i4/741719789/O1CN012MBPYs3N0v28FxR_!!0-item_pic.jpg_430x430q90.jpg"
-          >
-            <view slot="footer">
-              <van-button size="mini">按钮</van-button>
-              <van-button size="mini">按钮</van-button>
-            </view>
-          </van-card>
-          <van-card
-            num="2"
-            tag="8.0"
-            price="2.00"
-            desc="描述信息"
-            title="你不知道的JavaScript 上卷+中卷+下卷全套3本书"
-            thumb="https://img.alicdn.com/imgextra/i4/741719789/O1CN012MBPYs3N0v28FxR_!!0-item_pic.jpg_430x430q90.jpg"
-          >
-            <view slot="footer">
-              <van-button size="mini">按钮</van-button>
-              <van-button size="mini">按钮</van-button>
-            </view>
-          </van-card>
-       </view>
+      <view class="contain">
+          <view class="index-item" wx:for="{{aLists}}" wx:key="{{id}}">
+           <van-card
+           title="{{item.name}}" 
+           thumb="{{item.images[0]}}">
+             <view slot="desc">
+                <view>
+                  豆瓣评分：
+                  <view class="displayline" style="color: red">{{item.score}}</view>
+                </view>
+                <view class="oldprice">
+                  <van-tag plain type="danger">省{{item.coupon}}元</van-tag>
+                  <view class="displayline oldtext">￥{{item.oldprice}}</view>
+                </view>
+                <view class="newprice">
+                  <view class="displayline newtext">￥{{item.newprice}}</view>
+                  <view class="displayline">折后</view>
+                </view>
+             </view>
+             <view slot="footer">
+               <van-button size="mini" type="warning">去抢购</van-button>
+             </view>
+           </van-card>
+         </view>          
+      </view>
+       
     
     </van-tab>
     <van-tab title="nodejs">nodejs</van-tab>

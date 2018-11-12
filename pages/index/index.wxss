@@ -1,4 +1,24 @@
 /**index.wxss**/
 .bgindex {
-  background: #eee;
+  background: #efefef;
+}
+
+.contain {
+  margin-top: .3rem;
+}
+.index-item {
+  padding: .8rem 0;
+  background: #fafafa;
+  border-bottom: #EAEAEA solid 1px;
+}
+.oldprice {
+  margin: .2rem 0;
+}
+.oldtext {
+  color: #333;
+  text-decoration: line-through;
+}
+.newtext {
+  color: red;
+  font-size: .8rem;
 }
