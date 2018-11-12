@@ -1,0 +1,4 @@
+/**index.wxss**/
+.bgindex {
+  background: #eee;
+}
