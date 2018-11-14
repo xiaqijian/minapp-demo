@@ -1,0 +1,65 @@
+<!--pages/item/item.wxml-->
+<view class="item-wrap">
+  <view class='image-box'>
+     <image src='https://img.alicdn.com/imgextra/i4/741719789/O1CN012MBPYs3N0v28FxR_!!0-item_pic.jpg_430x430q90.jpg'></image>
+  </view>
+  <view class="item-text">
+     <view class="title">卷+中卷+下卷全套3本书 JavaScript编程教程书籍 JavaScript</view>
+     <view class="title-bottom">
+       <view class="left">
+          <view  class="displayline">
+           <van-tag  plain type="danger">省5元</van-tag>             
+          </view>
+          <view class="displayline">
+            <view  class="displayline newprice">￥45</view>
+            <view  class="displayline oldprice">￥50</view>
+          </view>
+       </view>
+       <view class="right">
+          豆瓣评分:
+          <view class="displayline mark">9.0</view>
+       </view>
+     </view>
+  </view>
+
+
+  <view class="">222</view>
+<!-- listend -->
+  <view class="">
+         <view class="contain">
+       <view class="index-item" wx:for="{{aLists}}" wx:key="{{id}}">
+         <van-card title="{{item.name}}" thumb="{{item.images[0]}}">
+           <view slot="desc">
+             <view>
+               豆瓣评分：
+               <view class="displayline" style="color: red">{{item.score}}</view>
+             </view>
+             <view class="oldprice">
+               <van-tag plain type="danger">省{{item.coupon}}元</van-tag>
+               <view class="displayline oldtext">￥{{item.oldprice}}</view>
+             </view>
+             <view class="newprice">
+               <view class="displayline newtext">￥{{item.newprice}}</view>
+               <view class="displayline">折后</view>
+             </view>
+           </view>
+           <view slot="footer">
+             <van-button size="mini" type="warning">去抢购</van-button>
+           </view>
+         </van-card>
+       </view>
+     </view>
+  </view>
+  <!-- list-end -->
+
+  <view class="bottom-box">
+
+        <van-goods-action>
+      <van-goods-action-icon icon="wap-home" text="首页" bind:click="onClickIcon" />
+      <van-goods-action-icon icon="share" text="分享" bind:click="onClickIcon" />
+      <van-goods-action-button text="告诉朋友" type="warning" bind:click="onClickButton" />
+      <van-goods-action-button text="收藏此劵" bind:click="onClickButton" />
+    </van-goods-action>
+  </view>
+
+</view>
