@@ -19,15 +19,26 @@
           豆瓣评分:
           <view class="displayline mark">9.0</view>
        </view>
+       
+       
      </view>
+     <view class="button-box">
+        <van-button size="large" type="danger">领取5元优惠劵</van-button>
+     </view>
+     <view class="tuijian-text">
+        <van-tag plain type="danger">推荐</van-tag>
+        少时诵诗书所所所搜索诗书所所所搜索诗书所所所搜索诗书所所所搜索诗书所所所搜索诗书所所所搜索诗书所所所搜索
+     </view>
+     <view class="">相关推荐</view>
   </view>
 
 
-  <view class="">222</view>
+  
 <!-- listend -->
   <view class="">
          <view class="contain">
        <view class="index-item" wx:for="{{aLists}}" wx:key="{{id}}">
+         <navigator url="/pages/item/item?title=navigate">
          <van-card title="{{item.name}}" thumb="{{item.images[0]}}">
            <view slot="desc">
              <view>
@@ -47,6 +58,7 @@
              <van-button size="mini" type="warning">去抢购</van-button>
            </view>
          </van-card>
+         </navigator>
        </view>
      </view>
   </view>
@@ -55,9 +67,9 @@
   <view class="bottom-box">
 
         <van-goods-action>
-      <van-goods-action-icon icon="wap-home" text="首页" bind:click="onClickIcon" />
-      <van-goods-action-icon icon="share" text="分享" bind:click="onClickIcon" />
-      <van-goods-action-button text="告诉朋友" type="warning" bind:click="onClickButton" />
+      <van-goods-action-icon icon="wap-home" text="首页" bind:click="onClickIndex" />
+      <van-goods-action-icon icon="chat" text="客服" bind:click="onClickIcon"  open-type="contact" />
+      <van-goods-action-button text="告诉朋友" type="warning" bind:click="onClickButton"  open-type="share" />
       <van-goods-action-button text="收藏此劵" bind:click="onClickButton" />
     </van-goods-action>
   </view>

@@ -35,6 +35,11 @@ Page({
       }
     })
   },
+  onClickIndex () {
+    wx.redirectTo({
+      url: '/pages/index/index?id=1'
+    })
+  },
 
   /**
    * 生命周期函数--监听页面显示

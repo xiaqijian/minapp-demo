@@ -1,10 +1,11 @@
 <!--index.wxml-->
 <view class='bgindex'>
   
-<van-tabs active="{{ active }}" bind:click="onClickDisabled">
+<van-tabs active="{{ active }}">
     <van-tab title="JavaScript">
       <view class="contain">
           <view class="index-item" wx:for="{{aLists}}" wx:key="{{id}}">
+          <navigator url="/pages/item/item?title=navigate">
            <van-card
            title="{{item.name}}" 
            thumb="{{item.images[0]}}">
@@ -26,6 +27,7 @@
                <van-button size="mini" type="warning">去抢购</van-button>
              </view>
            </van-card>
+           </navigator>
          </view>          
       </view>
        

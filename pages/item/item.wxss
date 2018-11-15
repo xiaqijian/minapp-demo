@@ -24,11 +24,11 @@
 .displayline {
   display: inline-block;
 }
-.newprice {
+.title-bottom .left .newprice {
   color: red;
   font-size: 1.3rem;
 }
-.oldprice {
+.title-bottom .left .oldprice {
   color: #333;
   text-decoration: line-through;
 }
@@ -59,4 +59,14 @@
 .newtext {
   color: red;
   font-size: .8rem;
+}
+.button-box {
+  margin: 1rem 0;
+}
+.tuijian-text {
+  font-size: .8rem;
+  color:rgb(31, 30, 30);
+  margin: .2rem 0;
+  padding-bottom: 2rem;
+  border-bottom: #333;
 }

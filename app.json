@@ -1,14 +1,14 @@
 {
   "pages": [
-    "pages/item/item",
     "pages/index/index",
+    "pages/item/item",
     "pages/logs/logs"
     
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "IT书架",
     "navigationBarTextStyle": "black"
   }
 }
