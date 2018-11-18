@@ -22,3 +22,8 @@
   color: red;
   font-size: .8rem;
 }
+.loading-box {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+}

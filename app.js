@@ -33,7 +33,13 @@ App({
       }
     })
   },
+  onShow (options) {
+    
+  },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    // baseUrl: 'http://192.168.1.3:3000',
+    sort: '',
+    baseUrl: 'https://xia.zhinenganquan.cn'
   }
 })

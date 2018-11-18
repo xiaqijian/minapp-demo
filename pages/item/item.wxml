@@ -1,33 +1,33 @@
 <!--pages/item/item.wxml-->
 <view class="item-wrap">
   <view class='image-box'>
-     <image src='https://img.alicdn.com/imgextra/i4/741719789/O1CN012MBPYs3N0v28FxR_!!0-item_pic.jpg_430x430q90.jpg'></image>
+     <image src='{{items.imagesurl}}'></image>
   </view>
   <view class="item-text">
-     <view class="title">卷+中卷+下卷全套3本书 JavaScript编程教程书籍 JavaScript</view>
+     <view class="title">{{items.name}}</view>
      <view class="title-bottom">
        <view class="left">
           <view  class="displayline">
-           <van-tag  plain type="danger">省5元</van-tag>             
+           <van-tag  plain type="danger">省{{items.counpon}}元</van-tag>             
           </view>
           <view class="displayline">
-            <view  class="displayline newprice">￥45</view>
-            <view  class="displayline oldprice">￥50</view>
+            <view  class="displayline newprice">￥{{items.newprice}}</view>
+            <view  class="displayline oldprice">￥{{items.oldprice}}</view>
           </view>
        </view>
        <view class="right">
-          豆瓣评分:
+          <!-- 豆瓣评分: -->
           <view class="displayline mark">9.0</view>
        </view>
        
        
      </view>
      <view class="button-box">
-        <van-button size="large" type="danger">领取5元优惠劵</van-button>
+        <van-button size="large" type="danger" data-passw="{{items.jpassword}}" bindtap="copyPassw">领取{{items.counpon}}元优惠劵</van-button>
      </view>
      <view class="tuijian-text">
         <van-tag plain type="danger">推荐</van-tag>
-        少时诵诗书所所所搜索诗书所所所搜索诗书所所所搜索诗书所所所搜索诗书所所所搜索诗书所所所搜索诗书所所所搜索
+        <!-- 少时诵诗书所所所搜索诗书所所所搜索诗书所所所搜索诗书所所所搜索诗书所所所搜索诗书所所所搜索诗书所所所搜索 -->
      </view>
      <view class="">相关推荐</view>
   </view>
@@ -37,30 +37,33 @@
 <!-- listend -->
   <view class="">
          <view class="contain">
-       <view class="index-item" wx:for="{{aLists}}" wx:key="{{id}}">
-         <navigator url="/pages/item/item?title=navigate">
-         <van-card title="{{item.name}}" thumb="{{item.images[0]}}">
-           <view slot="desc">
-             <view>
-               豆瓣评分：
-               <view class="displayline" style="color: red">{{item.score}}</view>
+          <view class="index-item" wx:for="{{aLists}}" wx:key="{{id}}">
+          <navigator url="/pages/item/item?id={{item.id}}&sort={{sort}}">
+           <van-card
+           title="{{item.name}}" 
+           thumb="{{item.imagesurl}}">
+             <view slot="desc">
+                <view>
+                  豆瓣评分：
+                  <view class="displayline" style="color: red">{{item.score}}</view>
+                </view>
+                <view class="oldprice">
+                  <van-tag plain type="danger">省{{item.counpon}}元</van-tag>
+                  <view class="displayline oldtext">￥{{item.oldprice}}</view>
+                </view>
+                <view class="newprice">
+                  <view class="displayline newtext">￥{{item.newprice}}</view>
+                  <view class="displayline">折后</view>
+                </view>
              </view>
-             <view class="oldprice">
-               <van-tag plain type="danger">省{{item.coupon}}元</van-tag>
-               <view class="displayline oldtext">￥{{item.oldprice}}</view>
+             <view slot="footer">
+               <van-button size="mini" type="warning">去抢购</van-button>
              </view>
-             <view class="newprice">
-               <view class="displayline newtext">￥{{item.newprice}}</view>
-               <view class="displayline">折后</view>
-             </view>
-           </view>
-           <view slot="footer">
-             <van-button size="mini" type="warning">去抢购</van-button>
-           </view>
-         </van-card>
-         </navigator>
-       </view>
-     </view>
+           </van-card>
+           </navigator>
+         </view>          
+      </view>
+       
   </view>
   <!-- list-end -->
 
@@ -69,8 +72,8 @@
         <van-goods-action>
       <van-goods-action-icon icon="wap-home" text="首页" bind:click="onClickIndex" />
       <van-goods-action-icon icon="chat" text="客服" bind:click="onClickIcon"  open-type="contact" />
-      <van-goods-action-button text="告诉朋友" type="warning" bind:click="onClickButton"  open-type="share" />
-      <van-goods-action-button text="收藏此劵" bind:click="onClickButton" />
+      <van-goods-action-button text="告诉朋友" type="warning" open-type="share" />
+      <van-goods-action-button text="领取此劵" data-passw="{{items.jpassword}}" bind:click="copyPassw" />
     </van-goods-action>
   </view>
 

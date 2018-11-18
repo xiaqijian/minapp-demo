@@ -1,21 +1,21 @@
 <!--index.wxml-->
 <view class='bgindex'>
-  
-<van-tabs active="{{ active }}">
-    <van-tab title="JavaScript">
+<van-loading class="loading-box" type="spinner" color="red" />
+<van-tabs active="{{ active }}" bind:change="onChange">
+    <van-tab title="javascript">
       <view class="contain">
           <view class="index-item" wx:for="{{aLists}}" wx:key="{{id}}">
-          <navigator url="/pages/item/item?title=navigate">
+          <navigator url="/pages/item/item?id={{item.id}}&&sort={{sort}}">
            <van-card
            title="{{item.name}}" 
-           thumb="{{item.images[0]}}">
+           thumb="{{item.imagesurl}}">
              <view slot="desc">
                 <view>
-                  豆瓣评分：
+                  <!-- 豆瓣评分： -->
                   <view class="displayline" style="color: red">{{item.score}}</view>
                 </view>
                 <view class="oldprice">
-                  <van-tag plain type="danger">省{{item.coupon}}元</van-tag>
+                  <van-tag plain type="danger">省{{item.counpon}}元</van-tag>
                   <view class="displayline oldtext">￥{{item.oldprice}}</view>
                 </view>
                 <view class="newprice">
@@ -33,10 +33,63 @@
        
     
     </van-tab>
-    <van-tab title="nodejs">nodejs</van-tab>
-    <van-tab title="计算机">计算机</van-tab>
-    <van-tab title="Python">Python</van-tab>
-    <van-tab title="css">css</van-tab>
-    <van-tab title="java">java</van-tab>
+    <van-tab title="node">
+       <view class="contain">
+          <view class="index-item" wx:for="{{aLists}}" wx:key="{{id}}">
+          <navigator url="/pages/item/item?id={{item.id}}&&sort={{sort}}">
+           <van-card
+           title="{{item.name}}" 
+           thumb="{{item.imagesurl}}">
+             <view slot="desc">
+                <view>
+                  <!-- 豆瓣评分： -->
+                  <view class="displayline" style="color: red">{{item.score}}</view>
+                </view>
+                <view class="oldprice">
+                  <van-tag plain type="danger">省{{item.counpon}}元</van-tag>
+                  <view class="displayline oldtext">￥{{item.oldprice}}</view>
+                </view>
+                <view class="newprice">
+                  <view class="displayline newtext">￥{{item.newprice}}</view>
+                  <view class="displayline">折后</view>
+                </view>
+             </view>
+             <view slot="footer">
+               <van-button size="mini" type="warning">去抢购</van-button>
+             </view>
+           </van-card>
+           </navigator>
+         </view>          
+      </view>
+    </van-tab>
+    <van-tab title="css">
+        <view class="contain">
+          <view class="index-item" wx:for="{{aLists}}" wx:key="{{id}}">
+          <navigator url="/pages/item/item?id={{item.id}}&sort={{sort}}">
+           <van-card
+           title="{{item.name}}" 
+           thumb="{{item.imagesurl}}">
+             <view slot="desc">
+                <view>
+                  <!-- 豆瓣评分： -->
+                  <view class="displayline" style="color: red">{{item.score}}</view>
+                </view>
+                <view class="oldprice">
+                  <van-tag plain type="danger">省{{item.counpon}}元</van-tag>
+                  <view class="displayline oldtext">￥{{item.oldprice}}</view>
+                </view>
+                <view class="newprice">
+                  <view class="displayline newtext">￥{{item.newprice}}</view>
+                  <view class="displayline">折后</view>
+                </view>
+             </view>
+             <view slot="footer">
+               <van-button size="mini" type="warning">去抢购</van-button>
+             </view>
+           </van-card>
+           </navigator>
+         </view>          
+      </view>
+    </van-tab>
   </van-tabs>
 </view>
